@@ -1,5 +1,8 @@
+import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
 const Cart = () => {
+    const data = useSelector(state => state.cart.value);
+    console.log(data);
     return <div>
         <h2>Корзина товаров</h2>
         <table>
@@ -11,12 +14,19 @@ const Cart = () => {
                 </tr>
             </thead>
             <tbody>
-                <CartItem name="Помидор" cnt="1" price="120"/>
+                {data.map(el => <CartItem
+                    {...el}
+                    key={el.id}
+                />)}
+                {/* <CartItem name="Помидор" cnt="1" price="120"/> */}
             </tbody>
             <tfoot>
                 <tr>
                     <td colSpan="2">ИТОГО</td>
-                    <td></td>
+                    <td>{data.reduce((sum, el) => {
+                        sum += el.cnt * el.price;
+                        return sum;
+                    }, 0)}</td>
                 </tr>
             </tfoot>
         </table>

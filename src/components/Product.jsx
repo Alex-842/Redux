@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { useDispatch } from "react-redux";
-import { delProduct, updProduct } from "../redux/actions/productActions";
-import { addToCart } from "../redux/actions/cartActions";
+import { delProduct, updProduct } from "../rtk/productReducer";
+import { addToCart } from "../rtk/cartReducer";
 const Product = (props) => {
     const dispatch = useDispatch();
     const [n, setN] = useState(props.name);

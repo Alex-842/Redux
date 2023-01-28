@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
 const Cart = () => {
     const data = useSelector(state => state.cart.value);
-    console.log(data);
+    // console.log(data);
     return <div>
         <h2>Корзина товаров</h2>
         <table>

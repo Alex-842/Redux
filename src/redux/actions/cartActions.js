@@ -13,14 +13,16 @@ const addToCart = (obj) => {
     }
 }
 
-const increment = () => {
+const increment = (id) => {
     return {
-        type: "INC"
+        type: "INC",
+        payload: id
     }
 }
-const decrement = () => {
+const decrement = (id) => {
     return {
-        type: "DEC"
+        type: "DEC",
+        payload: id
     }
 }
 

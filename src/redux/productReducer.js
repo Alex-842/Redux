@@ -7,7 +7,6 @@ const productReducer = (state = initialState, action) => {
     switch (action.type) {
         case "ADD":
             const test = state.filter(el => el.name.toLowerCase() === action.payload.name.toLowerCase());
-            
             return test.length > 0 ? state : [...state, action.payload];
         case "DEL":
             return state.filter(el => el.name !== action.payload)

@@ -48,6 +48,7 @@ const Product = (props) => {
                 : <>
                     <button onClick={() => {setUpdate(true)}}>Изменить</button>
                     <button onClick={delHandler}>Удалить</button>
+                    <button>Купить</button>
                 </>
             }
         </td>
